@@ -1,17 +1,3 @@
-# התעלמות מתיקיית ה-Build (קבצים מקומפלים)
 /target
-/out
-/build
-
-# התעלמות מהגדרות ספציפיות של IntelliJ (לא צריך אותן בגיט)
-.idea/
+/.idea
 *.iml
-*.iws
-
-# התעלמות מקבצי לוג ומערכת
-*.log
-.DS_Store
-
-# התעלמות מדרייברים שהורדת ידנית (אם יש)
-chromedriver.exe
-geckodriver.exe
