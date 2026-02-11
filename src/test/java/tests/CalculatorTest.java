@@ -16,6 +16,7 @@ public class CalculatorTest extends BaseTest {
         HomePage homePage = new HomePage(driver);
 
         homePage.clickMainMenu(MainMenu.DEMEI_BITUAH);
+        homePage.clickSubMenu("דמי ביטוח לאומי");
         try { Thread.sleep(1500); } catch (Exception e) {}
         homePage.clickSubMenu("מחשבון לחישוב דמי הביטוח");
 
