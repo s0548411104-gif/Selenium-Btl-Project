@@ -16,19 +16,13 @@ public class BreadcrumbsTest extends BaseTest {
             "אבטלה, אבטלה"
     })
     public void testBenefitsNavigation(String linkText, String expectedTitle) {
-        System.out.println("\n--- בודק: " + linkText + " ---");
-
-        driver.get("https://www.btl.gov.il");
-        driver.manage().window().maximize();
 
         BenefitsPage page = new BenefitsPage(driver);
         page.enterBenefitsSection();
         page.clickCategory(linkText);
 
-        String actualTitle = page.getPageTitle();
-        System.out.println("כותרת שנמצאה: " + actualTitle);
-
+        String actualTitle = page.getPageIdentifier();
         Assertions.assertTrue(actualTitle.contains(expectedTitle),
-                "הכותרת (" + actualTitle + ") לא הכילה את: " + expectedTitle);
+                "הכותרת לא תקינה עבור " + linkText);
     }
 }
