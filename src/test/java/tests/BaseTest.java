@@ -95,13 +95,11 @@ public class BaseTest {
 
     @BeforeEach
     public void setup() {
-        // אתחול הדרייבר
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
-        // כניסה לאתר ביטוח לאומי
         driver.get("https://www.btl.gov.il/");
     }
 
@@ -154,5 +152,4 @@ public class BaseTest {
         }
     }
 
-    // שימי לב: אין כאן @AfterEach כי ה-TestWatcher מטפל בסגירה
 }
