@@ -21,16 +21,11 @@ public class BranchesPage extends BtlBasePage {
         return pageTitle.getText().contains("סניפים");
     }
 
-    // --- הנה השינוי החשוב לשלב 5! ---
-    // הוספנו פונקציה שיודעת לקבל שם של סניף וללחוץ עליו
     public BranchInfoPage clickSpecificBranch(String branchName) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-        // אנחנו מחפשים קישור שיש בו את שם הסניף (למשל "ירושלים")
         WebElement branchLink = wait.until(ExpectedConditions.elementToBeClickable(By.partialLinkText(branchName)));
         branchLink.click();
 
-        // הפונקציה מחזירה לנו את הדף החדש שנפתח (דף פרטי הסניף)
         return new BranchInfoPage(driver);
     }
 }
